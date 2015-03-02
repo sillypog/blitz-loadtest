@@ -166,11 +166,15 @@ function formatOutput(lists, callback) {
 		return list.join('%2C');
 	});
 
-	var command = "blitz curl -p " +
-	    config.blitz.min + '-' + config.blitz.max + ':' + config.blitz.duration + ' ' +
-	    '-T ' + config.blitz.timeout + ' ' +
-	    "-v:tags 'list[" + formattedLists.join(',') + "]' " +
-	    "'http://"+ config.endpoint.hostname + config.endpoint.path + "#{tags}'";
+	var command = util.format("blitz curl -b %d-%d:%d -T %d -v:tags 'list[%s]' 'http://%s%s#{tags}'",
+		config.blitz.min,
+		config.blitz.max,
+		config.blitz.duration,
+		config.blitz.timeout,
+		formattedLists.join(','),
+		config.endpoint.hostname,
+		config.endpoint.path
+	);
 
 	callback(null, command);
 }
