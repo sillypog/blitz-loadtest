@@ -1,0 +1,22 @@
+{
+	"tag_db": {
+		"host": "localhost",
+		"user": "xxx",
+		"port": "3306",
+		"database": "xxx"
+	},
+	"tags": {
+		"type": "Team",
+		"iterations": 10
+	},
+	"endpoint": {
+		"hostname": "api.example.com",
+		"path": "/endpoint?tags="
+	},
+	"blitz": {
+		"min": 500,
+		"max": 4000,
+		"duration": 600,
+		"timeout": 30000
+	}
+}
