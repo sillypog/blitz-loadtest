@@ -166,7 +166,7 @@ function formatOutput(lists, callback) {
 		return list.join('%2C');
 	});
 
-	var command = util.format("blitz curl -b %d-%d:%d -T %d -v:tags 'list[%s]' 'http://%s%s#{tags}'",
+	var command = util.format("blitz curl -p %d-%d:%d -T %d -v:tags 'list[%s]' 'http://%s%s#{tags}'",
 		config.blitz.min,
 		config.blitz.max,
 		config.blitz.duration,
